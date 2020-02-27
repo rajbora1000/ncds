@@ -1,0 +1,65 @@
+from tkinter import *
+import tkinter as tk
+import tkinter.messagebox
+import tkinter.font as tkFont
+
+t=tk.Tk()
+t.title('NCDS')
+#t.geometry("1500x800+30+30")
+w, h = t.winfo_screenwidth(), t.winfo_screenheight()
+t.geometry("%dx%d+0+0" % (w, h))
+#fontStyle = tkFont.Font(family="Times New Roman", size=60)
+t.font(fontstyle)
+def enter():
+    if uid.get()=='raj' and pswd.get()=='12345':
+        tkinter.messagebox.showinfo('Title','Logged_In')
+        clear()
+    else:
+        tkinter.messagebox.showinfo('Title','Bhag Idhar se')
+def clear():
+    uid.delete(0, 'end')
+    pswd.delete(0, 'end')
+    v.set('User Type')
+OptionList=['Police','Civilian']
+v = tk.StringVar(t)
+v.set('User Type')
+
+impmsg=Label(t, text='IMPORTANT MESSAGE', fg='red',font=tkFont.Font(family="Times New Roman", size=60), borderwidth=2, relief="solid")
+wanted=Label(t, text='W A N T E D ', fg='red',font=tkFont.Font(family="Times New Roman", size=40), borderwidth=2, relief="solid")
+detail=Label(t, text='Enter Portal', borderwidth=2, relief="solid")
+opt = tk.OptionMenu(t, v, *OptionList)
+user=Label(t, text='USER_ID', borderwidth=2, relief="solid")
+password=Label(t, text='Password', borderwidth=2, relief="solid")
+uid=Entry(t,font=tkFont.Font(family="Times New Roman", size=40), borderwidth=2, relief="solid")
+pswd=Entry(t,font=tkFont.Font(family="Times New Roman", size=40), borderwidth=2, relief="solid")
+submit=Button(t, text='Submit', command=enter, borderwidth=2, relief="solid")
+reset=Button(t, text='Clear', command=clear, borderwidth=2, relief="solid")
+
+impmsg.place(x=0, y=50, width=w, height=100)
+
+wanted.place(x=600, y=150, width=700, height=70)
+
+detail.place(x=100 , y=225, width=400, height=75)
+opt.place(x = 100, y = 300 , width=400, height=50)
+
+user.place(x = 100, y = 350 , width=200, height=50)
+uid.place(x = 300, y = 350 , width=200, height=50)
+
+password.place(x = 100, y = 400 , width=200, height=50)
+pswd.place(x = 300, y = 400 , width=200, height=50)
+
+submit.place(x = 100, y = 450, width=200, height=50)
+reset.place(x = 300, y = 450 , width=200, height=50)
+
+mainloop()
+
+'''
+
+opt.pack()
+user.pack()
+password.pack()
+uid.pack()
+pswd.pack()
+submit.pack()
+reset.pack()
+'''
