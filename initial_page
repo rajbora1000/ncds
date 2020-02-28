@@ -3,6 +3,7 @@ import tkinter as tk
 import tkinter.messagebox
 import tkinter.font as tkFont
 from PIL import Image,ImageTk
+import os
 
 t=tk.Tk()
 t.title('NCDS')
@@ -20,9 +21,12 @@ def clear():
     uid.delete(0, 'end')
     pswd.delete(0, 'end')
     v.set('User Type')
+def register():
+    t.destroy()
+    os.system('python registration_page.py')
+    #Open Registration page
+    return
 OptionList=['Police','Civilian']
-
-
 v = tk.StringVar(t)
 v.set('User Type')
 
@@ -36,6 +40,8 @@ uid=Entry(t,font=tkFont.Font(family="Times New Roman", size=30), borderwidth=2, 
 pswd=Entry(t,show='#',font=tkFont.Font(family="Times New Roman", size=30), borderwidth=2, relief="solid")
 submit=Button(t, text='Submit', command=enter, borderwidth=2, relief="solid")
 reset=Button(t, text='Clear', command=clear, borderwidth=2, relief="solid")
+signup=Button(t, text='Register', command=register, borderwidth=2, relief="solid")
+
 
 load = Image.open(r"C:\Users\RAJ P BORA\Downloads\dawood.png")
 load = load.resize((200,200),Image.ANTIALIAS)
@@ -62,12 +68,9 @@ img5.image = photo2
 img6 = Label(t, image=photo2)
 img6.image = photo2
 
-
-
-
 impmsg.place(x=0, y=50, width=w, height=100)
 
-wanted.place(x=600, y=150, width=700, height=70)
+wanted.place(x=600, y=150, width=800, height=70)
 
 detail.place(x=100 , y=225, width=400, height=75)
 opt.place(x = 100, y = 300 , width=400, height=50)
@@ -81,6 +84,8 @@ pswd.place(x = 300, y = 400 , width=200, height=50)
 submit.place(x = 100, y = 450, width=200, height=50)
 reset.place(x = 300, y = 450 , width=200, height=50)
 
+signup.place(x= 100, y = 550, width = 400, height = 50)
+
 img1.place(x = 600, y = 250 , width=200, height=200)
 img2.place(x = 900, y = 250 , width=200, height=200)
 img3.place(x = 1200, y = 250 , width=200, height=200)
@@ -89,14 +94,3 @@ img5.place(x = 900, y = 500 , width=200, height=200)
 img6.place(x = 1200, y = 500 , width=200, height=200)
 
 mainloop()
-
-'''
-
-opt.pack()
-user.pack()
-password.pack()
-uid.pack()
-pswd.pack()
-submit.pack()
-reset.pack()
-'''
