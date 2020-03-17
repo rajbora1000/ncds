@@ -6,7 +6,7 @@ from PIL import Image,ImageTk
 import os
 
 t=tk.Tk()
-t.title('NCDS - Constable ')
+t.title('NCDS - Commisioner ')
 w, h = t.winfo_screenwidth(), t.winfo_screenheight()
 t.geometry("%dx%d+0+0" % (w, h))
 
@@ -16,6 +16,7 @@ def enter_profile():
 def dashboard():
     return
 def search():
+    t.destroy()
     os.system('python police_search.py')
     return
 def last():

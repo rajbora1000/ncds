@@ -9,6 +9,13 @@ w, h = t.winfo_screenwidth(), t.winfo_screenheight()
 t.geometry("%dx%d+0+0" % (w, h))
 
 def display_details():
+    load2 = Image.open(r"C:\Users\RAJ P BORA\Downloads\edit.jpg")
+    load2 = load2.resize((40, 40), Image.ANTIALIAS)
+    photo2 = ImageTk.PhotoImage(load2)
+    img2 = Button(t, image=photo2, borderwidth=2, relief="solid")
+    img2.image = photo2
+
+
     fname1 = Label(t, text = 'Raj', font=tkFont.Font(family="Times New Roman", size=30), borderwidth=2, relief="solid")
     mname1 = Label(t, text = 'P', font=tkFont.Font(family="Times New Roman", size=30), borderwidth=2, relief="solid")
     lname1 = Label(t, text = 'Bora', font=tkFont.Font(family="Times New Roman", size=30), borderwidth=2, relief="solid")
@@ -44,6 +51,7 @@ def display_details():
     occupation1.place(x=300, y=450, width=400, height=70)
     user.place(x=50, y=550, width=200, height=70)
     uid.place(x=300, y=550, width=400, height=70)
+    img2.place(x=1370, y=550, width=40, height=40)
 
 fname=Label(t, text='First Name', borderwidth=2, relief="solid")
 mname=Label(t, text='Middle Name', borderwidth=2, relief="solid")

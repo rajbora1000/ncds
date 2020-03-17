@@ -16,6 +16,7 @@ def enter_profile():
 def dashboard():
     return
 def search():
+    t.destroy()
     os.system('python police_search.py')
     return
 def last():

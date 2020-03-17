@@ -28,6 +28,11 @@ def enter():
         clear()
         t.destroy()
         os.system('python constable_home.py')
+    elif v.get()=='Police' and uid.get()=='sarvesh' and pswd.get()=='12345':
+        tkinter.messagebox.showinfo('Title', 'Logged_In')
+        clear()
+        t.destroy()
+        os.system('python sys_home.py')
     else:
         tkinter.messagebox.showinfo('Title','Bhag Idhar se')
 def clear():
@@ -44,11 +49,12 @@ def close():
 OptionList=['Police','Civilian']
 v = tk.StringVar(t)
 v.set('User Type')
+opt = tk.OptionMenu(t, v, *OptionList)
 
 impmsg=Label(t, text='WELCOME TO POLICE PORTAL', fg='red',font=tkFont.Font(family="Times New Roman", size=60), borderwidth=2, relief="solid")
 wanted=Label(t, text='W A N T E D ', fg='red',font=tkFont.Font(family="Times New Roman", size=40), borderwidth=2, relief="solid")
 detail=Label(t, text='Log In to Portal', borderwidth=2, relief="solid")
-opt = tk.OptionMenu(t, v, *OptionList)
+
 user=Label(t, text='USER_ID', borderwidth=2, relief="solid")
 password=Label(t, text='Password', borderwidth=2, relief="solid")
 uid=Entry(t,font=tkFont.Font(family="Times New Roman", size=30), borderwidth=2, relief="solid")
@@ -58,7 +64,7 @@ reset=Button(t, text='Clear', command=clear, borderwidth=2, relief="solid")
 signup=Button(t, text='Register', command=register, borderwidth=2, relief="solid")
 close=Button(t, text='Exit', command=close, borderwidth=2, relief="solid")
 
-load = Image.open(r"C:\Users\RAJ P BORA\Downloads\dawood.png")
+load = Image.open(r"C:\Users\RAJ P BORA\Downloads\burse.jpg")
 load = load.resize((200,200),Image.ANTIALIAS)
 photo = ImageTk.PhotoImage(load)
 
